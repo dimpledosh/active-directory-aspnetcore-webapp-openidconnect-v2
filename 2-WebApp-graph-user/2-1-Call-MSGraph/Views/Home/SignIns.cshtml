@@ -1,0 +1,38 @@
+﻿@using Newtonsoft.Json.Linq
+@using Microsoft.Graph
+@model SignInsViewModel
+
+@{
+    ViewData["Title"] = "Sign-Ins";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<table class="table table-striped" style="font-family: monospace">
+    <thead  class="thead-dark">
+        <tr>
+            <th>UserDisplayName</th>
+            <th>AppDisplayName</th>
+            <th>ConditionalAccessStatus</th>
+            <th>ResourceDisplayName</th>
+            <th>IpAddress</th>
+            <th>CreatedDateTime</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    @{
+        var signIns = SignInsViewModel.SignIns;
+        foreach (var signIn in signIns)
+        {
+            <tr>
+                <td>@signIn.UserDisplayName</td>
+                <td>@signIn.AppDisplayName</td>
+                <td>@signIn.ConditionalAccessStatus</td>
+                <td>@signIn.ResourceDisplayName</td>
+                <td>@signIn.IpAddress</td>
+                <td>@signIn.CreatedDateTime</td>
+                <td>@signIn.Id</td>
+            </tr>
+        }      
+    }
+</table>

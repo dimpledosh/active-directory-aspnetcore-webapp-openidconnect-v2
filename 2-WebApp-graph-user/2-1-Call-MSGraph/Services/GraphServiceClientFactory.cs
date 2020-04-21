@@ -1,22 +1,24 @@
-﻿using Microsoft.Graph;
+﻿extern alias BetaLib;
+using Graph = BetaLib.Microsoft.Graph;
 using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using MSGraph = Microsoft.Graph;
 
 namespace WebApp_OpenIDConnect_DotNet.Services
 {
     public class GraphServiceClientFactory
     {
-        public static GraphServiceClient GetAuthenticatedGraphClient(Func<Task<string>> acquireAccessToken, 
+        public static Graph::GraphServiceClient GetAuthenticatedGraphClient(Func<Task<string>> acquireAccessToken, 
                                                                                  string baseUrl)
         {
   
-            return new GraphServiceClient(baseUrl, new CustomAuthenticationProvider(acquireAccessToken));
+            return new Graph::GraphServiceClient(baseUrl, new CustomAuthenticationProvider(acquireAccessToken));
         }
     }
 
-    class CustomAuthenticationProvider : IAuthenticationProvider
+    class CustomAuthenticationProvider : MSGraph::IAuthenticationProvider
     {
         public CustomAuthenticationProvider(Func<Task<string>> acquireTokenCallback)
         {

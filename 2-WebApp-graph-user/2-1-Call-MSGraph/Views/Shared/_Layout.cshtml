@@ -18,7 +18,7 @@
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
+        <div class="container" style="width: auto">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
@@ -32,6 +32,10 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Profile">Profile</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="SignIns">Sign-Ins</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="RiskyUsers">RiskyUsers</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="RiskDetections">RiskDetections</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="RiskEvents">RiskEvents</a></li>
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

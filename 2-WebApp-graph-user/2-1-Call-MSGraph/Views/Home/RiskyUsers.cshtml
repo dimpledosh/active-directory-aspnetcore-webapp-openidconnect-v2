@@ -1,0 +1,31 @@
+﻿@using Newtonsoft.Json.Linq
+@model RiskyUsersViewModel
+
+@{
+    ViewData["Title"] = "RiskyUsers";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<table class="table table-striped" style="font-family: monospace">
+    <thead  class="thead-dark">
+        <tr>
+            <th>UserPrincipalName</th>
+            <th>UserDisplayName</th>
+            <th>RiskLevel</th>
+            <th>RiskState</th>
+        </tr>
+    </thead>
+    @{       
+        var riskyUsers = RiskyUsersViewModel.RiskyUsers;
+        foreach (var riskyUser in riskyUsers)
+        {
+            <tr>
+                <td>@riskyUser.UserPrincipalName</td>
+                <td>@riskyUser.UserDisplayName</td>
+                <td>@riskyUser.RiskLevel</td>
+                <td>@riskyUser.RiskState</td>
+            </tr>
+        }      
+    }
+</table>

@@ -1,0 +1,35 @@
+﻿@using Newtonsoft.Json.Linq
+@using Microsoft.Graph
+@model RiskEventsViewModel
+
+@{
+    ViewData["Title"] = "RiskEvents";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<table class="table table-striped" style="font-family: monospace">
+    <thead  class="thead-dark">
+        <tr>
+            <th>UserDisplayName</th>
+            <th>AppDisplayName</th>
+            <th>ConditionalAccessStatus</th>
+            <th>ResourceDisplayName</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    @{       
+        var riskEvents = RiskEventsViewModel.RiskEvents;// as Microsoft.Graph.Beta.GraphServiceIdentityRiskEventsCollectionRequestBuilder;
+        //var properties = me.GetType().GetProperties();
+        foreach (var riskEvent in riskEvents)
+        {
+            @* <tr>
+                <td>@riskEvent.UserDisplayName</td>
+                <td>@riskEvent.AppDisplayName</td>
+                <td>@riskEvent.ConditionalAccessStatus</td>
+                <td>@riskEvent.ResourceDisplayName</td>
+                <td>@riskEvent.Id</td>
+            </tr> *@
+        }
+    }
+</table>

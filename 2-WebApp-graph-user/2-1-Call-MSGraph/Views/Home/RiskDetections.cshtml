@@ -1,0 +1,44 @@
+﻿@using Newtonsoft.Json.Linq
+@using Microsoft.Graph
+@model RiskyDetectionsViewModel
+
+@{
+    ViewData["Title"] = "RiskDetections";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+
+<table class="table table-striped" style="font-family: monospace">
+    <thead  class="thead-dark">
+        <tr>
+            <th>UserDisplayName</th>
+            <th>UserPrincipalName</th>
+            <th>RiskEventType</th>
+            <th>RiskLevel</th>
+            <th>RiskState</th>
+            <th>DetectedDateTime</th>
+            <th>IpAddress</th>
+            <th>Location.City</th>
+            <th>Location.CountryOrRegion</th>
+        </tr>
+    </thead>
+    @{       
+        var riskDetections = RiskyDetectionsViewModel.RisksDetected;
+        //var properties = me.GetType().GetProperties();
+        foreach (var riskDetection in riskDetections)
+        {
+            <tr>
+                <td>@riskDetection.UserDisplayName</td>
+                <td>@riskDetection.UserPrincipalName</td>
+                <td>@riskDetection.RiskEventType</td>
+                <td>@riskDetection.RiskType</td>
+                <td>@riskDetection.RiskLevel</td>
+                <td>@riskDetection.RiskState</td>
+                <td>@riskDetection.DetectedDateTime</td>
+                <td>@riskDetection.IpAddress</td>
+                <td>@riskDetection.Location.City</td>
+                <td>@riskDetection.Location.CountryOrRegion</td>
+            </tr>
+        }      
+    }
+</table>

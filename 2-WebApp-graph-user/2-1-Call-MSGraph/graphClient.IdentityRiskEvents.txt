@@ -1,0 +1,8 @@
+graphClient.IdentityRiskEvents
+{Microsoft.Graph.GraphServiceIdentityRiskEventsCollectionRequestBuilder}
+
+graphClient.RiskDetections
+{Microsoft.Graph.GraphServiceRiskDetectionsCollectionRequestBuilder}
+
+graphClient.RiskyUsers
+{Microsoft.Graph.GraphServiceRiskyUsersCollectionRequestBuilder}
